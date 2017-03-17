@@ -45,8 +45,7 @@ angular.module('starter', ['ionic','firebase','ngCordova'])
         Start : start,
         End : end
       }).then(function(ref){
-       console.log(JSON.stringify(data))
-       $scope.firedata=JSON.stringify(data);
+       $scope.firedata=data;
        $scope.mydata(data);
      // alert(JSON.stringify(data))
       }
@@ -62,8 +61,8 @@ angular.module('starter', ['ionic','firebase','ngCordova'])
         });
       $cordovaCalendar.createEvent({
             title:  $scope.task,
-            startDate: new Date( $scope.en),
-            endDate: new Date( $scope.en)
+            startDate: new Date(parseInt($scope.st)),
+            endDate: new Date(parseInt ($scope.en))
         }).then(function (result) {
             alert("Event created successfully");
         }, function (err) {

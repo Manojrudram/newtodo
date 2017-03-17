@@ -44,17 +44,25 @@
       </ion-header-bar>
       <ion-content ng-controller="ExampleController">
         <div class="list list-inset">
-  <label class="item item-input">
-    <input type="text" placeholder="todo" ng-model="todo">
+  <label class="item item-input item-icon-right">
+    <i class="icon ion-card"  style="font-size: medium;"></i>
+    <input type="text" placeholder="Enter the Task" ng-model="todo">
   </label>
-  <label class="item item-input">
+  <label class="item item-input item-icon-right">
+    <i class="icon ion-clock"  style="font-size: medium;"></i>
     <input type="text" placeholder="start" ng-model="strt">
   </label>
-  <label class="item item-input">
+  <label class="item item-input item-icon-right">
+    <i class="icon ion-clock"  style="font-size: medium;"></i>
     <input type="text" placeholder="End" ng-model="end">
   </label>
-  <button class="button" ng-click="createEvent(todo,strt,end)">Create Event</button>
- {{firedata.Task}}
+  <center><button class="button button-positive button-clear" ng-click="createEvent(todo,strt,end)">Create Event</button></center>
+ <ul>
+<li class="item highlight" ng-repeat="x in firedata">
+  {{x.Task}}
+  {{x.Start}}
+</li>
+</ul>
         </div>
 </ion-content>
     </ion-pane>
